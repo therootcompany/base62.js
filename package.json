@@ -1,0 +1,28 @@
+{
+  "name": "@root/base62",
+  "version": "0.1.0",
+  "description": "A standards-compliant (base-x) base62 implementation.",
+  "main": "base62.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/therootcompany/base62.js.git"
+  },
+  "keywords": [
+    "base62",
+    "base-x",
+    "basex",
+    "base_x"
+  ],
+  "author": "AJ ONeal <aj@therootcompany.com> (https://therootcompany.com/)",
+  "license": "MPL-2.0",
+  "bugs": {
+    "url": "https://github.com/therootcompany/base62.js/issues"
+  },
+  "homepage": "https://github.com/therootcompany/base62.js#readme",
+  "dependencies": {
+    "base-x": "^3.0.9"
+  }
+}

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Encode Base62 Online</title>
+    <link rel="stylesheet" type="text/css" href="vendor/mvp.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href="/">Base62.js</a>
+        <ul>
+          <li>
+            <a
+              href="https://github.com/therootcompany/base62.js"
+              target="_blank"
+              >Source on GitHub</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section>
+        <form>
+          <label
+            >Paste your input here:
+            <textarea
+              style="width: 100%; box-sizing: border-box"
+              rows="5"
+              name="source"
+            ></textarea>
+          </label>
+          <label
+            >Base62 Dictionary:
+            <textarea
+              style="width: 100%; box-sizing: border-box"
+              rows="2"
+              name="dictionary"
+            >
+0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz</textarea
+            >
+          </label>
+          Input Type:
+          <label>
+            <input type="radio" name="format" value="" checked />
+            UTF-8 String (or JSON Byte Array)
+          </label>
+          <label>
+            <input type="radio" name="format" value="base64" />
+            Base64
+          </label>
+          <button name="encode">Encode (to Base62)</button>
+          <button name="decode">Decode (from Base62)</button>
+        </form>
+      </section>
+    </main>
+    <footer>
+      <hr />
+      <p>Made by <a href="https://github.com/therootcompany/">Root</a></p>
+    </footer>
+    <script src="./base62.js"></script>
+    <script src="./web-demo.js"></script>
+  </body>
+</html>
