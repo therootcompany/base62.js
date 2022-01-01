@@ -21,7 +21,8 @@
     </header>
     <main>
       <section>
-        <form>
+        <header><h2>BaseX-Style Base62 Codec</h2></header>
+        <form data-id="convert">
           <label
             >Paste your input here:
             <textarea
@@ -53,12 +54,65 @@
           <button name="decode">Decode (from Base62)</button>
         </form>
       </section>
+
+      <section>
+        <header><h2>GitHub-Style Base62 Tokens</h2></header>
+        <form data-id="generate">
+          <label
+            >Choose your token prefix (ex: <code>ghp_</code>, <code>gho_</code>,
+            <code>ghr_</code>...):
+            <input
+              name="prefix"
+              type="text"
+              value="b62_"
+              placeholder="ex: ghp_, gho_, ghr_, ..."
+            />
+          </label>
+          <label
+            >Base62 Dictionary:
+            <textarea
+              style="width: 100%; box-sizing: border-box"
+              rows="2"
+              name="dict"
+              placeholder="ex: a randomized base62 dictionary (0-9, a-z, A-Z)"
+            >
+0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz</textarea
+            >
+          </label>
+          <label
+            >Choose your token entropy length (in characters):
+            <input
+              name="length"
+              type="number"
+              value="30"
+              step="1"
+              min="1"
+              max="9000"
+              placeholder="ex: 30"
+            />
+          </label>
+
+          <label
+            >Choose your token entropy length (in characters):
+            <input
+              name="token"
+              type="text"
+              placeholder="ex: b62_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxcccccc"
+              style="width: 100%; box-sizing: border-box"
+            />
+          </label>
+          <button name="generate">Generate</button>
+          <!-- TODO button name="verify">Verify</button -->
+        </form>
+      </section>
     </main>
     <footer>
       <hr />
       <p>Made by <a href="https://github.com/therootcompany/">Root</a></p>
     </footer>
     <script src="./base62.js"></script>
+    <script src="./vendor/crc32.js"></script>
+    <script src="./base62-token.js"></script>
     <script src="./web-demo.js"></script>
   </body>
 </html>

@@ -10,6 +10,7 @@
   }
 
   var Base62 = window.Base62;
+  var Base62Token = window.Base62Token;
 
   function parseInput(src, format) {
     if ("base64" === format) {
@@ -34,7 +35,7 @@
   // hacky-do because prettier...
   $('[name="dictionary"]').value = $('[name="dictionary"]').value.trim();
 
-  $("form").addEventListener("submit", function (ev) {
+  $('form[data-id="convert"]').addEventListener("submit", function (ev) {
     ev.preventDefault();
     ev.stopPropagation();
 
@@ -59,5 +60,17 @@
       window.alert(msg);
       throw new Error(msg);
     }
+  });
+
+  $('form[data-id="generate"]').addEventListener("submit", function (ev) {
+    ev.preventDefault();
+    ev.stopPropagation();
+
+    var prefix = $('[name="prefix"]').value;
+    var dict = $('[name="dict"]').value.trim();
+    var len = parseInt($('[name="length"]').value, 10);
+    var token = Base62Token.generate(dict, prefix, len);
+
+    $('[name="token"]').value = token;
   });
 })();
