@@ -69,8 +69,26 @@
     var prefix = $('[name="prefix"]').value;
     var dict = $('[name="dict"]').value.trim();
     var len = parseInt($('[name="length"]').value, 10);
-    var token = Base62Token.generate(dict, prefix, len);
+    var token;
 
-    $('[name="token"]').value = token;
+    if ("generate" === ev.submitter.name) {
+      token = Base62Token.generate(dict, prefix, len);
+      $('[name="token"]').value = token;
+      return;
+    }
+
+    // verify
+    token = $('[name="token"]').value.trim();
+    if (!token) {
+      window.alert("Can't verify an empty token boss...");
+      return;
+    }
+    if (!Base62Token.verify(dict, token)) {
+      window.alert(
+        "Failed verification.\n\nDid you copy the entire token?\nAre you using the correct dictionary?"
+      );
+      return;
+    }
+    window.alert("Verified!\n\nThat appears to be a proper token.");
   });
 })();

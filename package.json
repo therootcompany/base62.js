@@ -24,6 +24,7 @@
   "homepage": "https://github.com/therootcompany/base62.js#readme",
   "dependencies": {
     "base-x": "^3.0.9",
+    "base62-token": "^1.1.0",
     "crc-32": "^1.2.0"
   }
 }
